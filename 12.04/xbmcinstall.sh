@@ -701,9 +701,10 @@ function selectXbmcPpa()
         
     options=(1 "Team XBMC (stable)" on
             2 "Team XBMC (Unstable)" off
-            3 "Wsnipex - VAAPI (only for INTEL)" off
-            4 "Wsnipex - Fernetmenta master" off
-            5 "Empty" off)
+            3 "Team XBMC (Nightly)" off
+            4 "Wsnipex - VAAPI (only for INTEL)" off
+            5 "Wsnipex - Fernetmenta master" off
+            6 "Empty" off)
          
     choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 
@@ -715,12 +716,15 @@ function selectXbmcPpa()
             addXbmcPpa "ppa:team-xbmc/unstable"
             ;;
         3)
-            addXbmcPpa "ppa:wsnipex/vaapi"
+            addXbmcPpa "ppa:team-xbmc/xbmc-nightly"
             ;;
         4)
-            addXbmcPpa "ppa:wsnipex/xbmc-fernetmenta-master"
+            addXbmcPpa "ppa:wsnipex/vaapi"
             ;;
         5)
+            addXbmcPpa "ppa:wsnipex/xbmc-fernetmenta-master"
+            ;;
+        6)
             addXbmcPpa ""
             ;;
         *)
